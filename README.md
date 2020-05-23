@@ -56,10 +56,11 @@ allprojects {
       // ...
     }
 }
+ ```
 
-  ```
   <br>
-  b) In your module (app-level) Gradle file (usually android/app/build.gradle), apply the Google Services Gradle plugin.
+  
+ b) In your module (app-level) Gradle file (usually android/app/build.gradle), apply the Google Services Gradle plugin. <br>
   ```
       // Add the following line:
     apply plugin: 'com.google.gms.google-services'  // Google Services plugin
@@ -72,7 +73,7 @@ allprojects {
 
   ```
   <br>
-  
+
 4. Run flutter packages get in VS CODE.
 
 
@@ -80,36 +81,39 @@ allprojects {
 
 
 ## Step 5: Add FlutterFire Plugins
+
 1. Ensure that your app is not currently running in your emulator or on your device. <br>
 
 2. From the root directory of your Flutter app, open your pubspec.yaml file.
 
 3. Add the FlutterFire plugins for the Firebase Core Flutter SDK.
-```
-dependencies:
-  flutter:
-    sdk: flutter
-  # Add the dependency for the Firebase Core Flutter SDK
-  firebase_core: 
+      ```
+      dependencies:
+        flutter:
+          sdk: flutter
+        # Add the dependency for the Firebase Core Flutter SDK
+        firebase_core: 
 
-```
-4. Add the other Flutter Fire plugins you want to use
-```
-dependencies:
-  flutter:
-    sdk: flutter
-  # Check that you have this dependency (added in the previous step)
-  firebase_core:
+      ```
+      
+4. Add the other Flutter Fire plugins you want to use <br>
+     ```
+     dependencies:
+       flutter:
+         sdk: flutter
+       # Check that you have this dependency (added in the previous step)
+       firebase_core:
 
-  # Add the dependency for the FlutterFire plugin for Google Analytics
-  firebase_analytics: 
+       # Add the dependency for the FlutterFire plugin for Google Analytics
+       firebase_analytics: 
 
-  # Add the dependencies for any other Firebase products you want to use in your app
-  # For example, to use Firebase Authentication and Cloud Firestore
-  firebase_auth: 
-  cloud_firestore:
+       # Add the dependencies for any other Firebase products you want to use in your app
+       # For example, to use Firebase Authentication and Cloud Firestore
+       firebase_auth: 
+       cloud_firestore:
 
-```
+     ```
+     <br>
 
 5. Run flutter packages get.
 <br>
@@ -117,20 +121,21 @@ dependencies:
 
 ## The most important steps (If your app fails to build after adding the FlutterFire Plugins)
 
-
 1. Enable multidex.
 <br>
 
 Open android/app/build.gradle and add the following lines.
-```
-defaultConfig {
-    ...
-    multiDexEnabled true
-}
-```
+    ```
+    defaultConfig {
+        ...
+        multiDexEnabled true
+    }
+    ```
+    
 <br>
 
 and
+
 ```
 dependencies {
     ...
@@ -138,6 +143,7 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
 }
 ```
+
 
 If you have migrated to AndroidX, you'll want this instead:
 ```
