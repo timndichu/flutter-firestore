@@ -71,9 +71,13 @@ allprojects {
     // ...
 
   ```
-4. Run flutter packages get in VS CODE. <br>
+  <br>
+  
+4. Run flutter packages get in VS CODE.
+
 
 5. Back in the Firebase console setup workflow, click Next to skip the remaining steps.
+
 
 ## Step 5: Add FlutterFire Plugins
 1. Ensure that your app is not currently running in your emulator or on your device. <br>
@@ -106,38 +110,42 @@ dependencies:
   cloud_firestore:
 
 ```
+
 5. Run flutter packages get.
+<br>
 
 
-### The most important steps (If your app fails to build after adding the FlutterFire Plugins)
+## The most important steps (If your app fails to build after adding the FlutterFire Plugins)
 
 
 1. Enable multidex.
+<br>
 
 Open android/app/build.gradle and add the following lines.
 ```
-
 defaultConfig {
     ...
-
     multiDexEnabled true
 }
+```
+<br>
 
 and
-
+```
 dependencies {
     ...
 
     implementation 'com.android.support:multidex:1.0.3'
 }
 ```
+
 If you have migrated to AndroidX, you'll want this instead:
 ```
-
 dependencies {
     ...
-
     implementation 'androidx.multidex:multidex:2.0.1'
 }
 ```
+
+<br>
 
