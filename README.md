@@ -13,18 +13,20 @@ If you have an existing Google Cloud Platform (GCP) project, you can select the 
 
 ## Step 3: Register your app with Firebase
 1. In the center of the Firebase console's project overview page, click the Android icon to launch the setup workflow. </br>
-2. Enter your app's package name in the Android package name field. **This is important: Make sure to use a ```com.companyname.appname``` setup and not ```com.example.appname```. So choose an appropriate name** </br>
+2. Enter your app's package name in the Android package name field. <br>
+**This is important: Make sure to use a ```com.companyname.appname``` setup and not ```com.example.appname```. So choose an appropriate name** </br>
 *Find this package name in your module (app-level) Gradle file, usually app/build.gradle (example package name: com.yourcompany.yourproject). </br>
 Make sure to find all occurrences of that package name in your project and replace all of them > from com.example.yourprojectname > to what you want it named <br>*
 3. Click Register app.
 
 ## Step 4: Add a Firebase configuration file
-1. Click Download google-services.json to obtain your Firebase Android config file (google-services.json).
 
-    You can download your Firebase Android config file again at any time.
-    Make sure the config file is not appended with additional characters, like (2).
+1. Click Download google-services.json to obtain your Firebase Android config file (google-services.json).
+ *You can download your Firebase Android config file again at any time.
+ Make sure the config file is not appended with additional characters, like (2).* <br>
 
 2. Move your config file into the android/app directory of your Flutter app. <br>
+
 3. To enable Firebase services in your Android app, add the google-services plugin to your Gradle files, as follows: <br>
   a) In your root-level (project-level) Gradle file (android/build.gradle), add rules to include the Google Services Gradle plugin. Check that you have Google’s Maven repository, as well. 
   ```
@@ -104,14 +106,16 @@ dependencies:
   cloud_firestore:
 
 ```
-5. Run flutter packages get. <br>
+5. Run flutter packages get.
 
-### The most important steps (If your app fails to build after adding the FlutterFire Plugins
+
+### The most important steps (If your app fails to build after adding the FlutterFire Plugins)
 
 
 1. Enable multidex.
 
 Open android/app/build.gradle and add the following lines.
+```
 
 defaultConfig {
     ...
@@ -126,13 +130,14 @@ dependencies {
 
     implementation 'com.android.support:multidex:1.0.3'
 }
-
+```
 If you have migrated to AndroidX, you'll want this instead:
+```
 
 dependencies {
     ...
 
     implementation 'androidx.multidex:multidex:2.0.1'
 }
-
+```
 
