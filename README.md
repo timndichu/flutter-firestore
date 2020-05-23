@@ -119,16 +119,20 @@ allprojects {
 <br>
 
 
-## The most important steps (If your app fails to build after adding the FlutterFire Plugins)
+## The most important step (If your app fails to build after adding the FlutterFire Plugins)
 
-1. Enable multidex.
+Enable multidex.
 <br>
 
-Open android/app/build.gradle and add the following lines.
+Open android/app/build.gradle and add the following lines. 
+<br>
+
     ```
     defaultConfig {
+    
         ...
         multiDexEnabled true
+        
     }
     ```
     
